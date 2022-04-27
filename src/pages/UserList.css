@@ -1,0 +1,111 @@
+.filter-select {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 0.5rem 2rem;
+	margin: 2rem auto;
+	color: #000;
+	font-weight: bold;
+	width: 200px;
+}
+.card-list-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+.card {
+	position: relative;
+	width: 258px;
+	border: 1px solid #ccc;
+	margin-right: 1rem;
+	margin-bottom: 1rem;
+	transition: box-shadow 100ms;
+}
+.card:hover {
+	box-shadow: rgba(0, 0, 0, 0.6) 5px 5px 10px;
+}
+.card:hover .remove-btn {
+	opacity: 1;
+}
+.remove-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: block;
+	opacity: 0;
+	width: 50px;
+	height: 50px;
+	padding: 1rem;
+	font-size: 18px;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.5);
+	border: none;
+	border-radius: 50%;
+	z-index: 1;
+	cursor: pointer;
+	transition: opacity 100ms;
+}
+.back-drop {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	height: 100px;
+	margin-bottom: 80px;
+	background-image: radial-gradient(rgb(58, 115, 153), rgb(26, 75, 114));
+}
+.img-container {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 1px solid #ccc;
+	padding: 0.6rem;
+	background-color: #fff;
+	margin-top: 40px;
+}
+.card-img {
+	width: 100%;
+	height: auto;
+	border-radius: 50%;
+}
+.name-text {
+	font-size: 26px;
+	font-weight: bold;
+	color: #000;
+}
+.gender-text {
+	color: #999;
+}
+.connect-btn {
+	padding: 0.5rem 2rem;
+	border: 1px solid rgb(43, 108, 176);
+	border-radius: 4px;
+	background-color: #fff;
+	color: rgb(43, 108, 176);
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	cursor: pointer;
+	transition: background-color 100ms;
+}
+.connect-btn:hover {
+	background-color: #ebf8ff;
+}
+.loading-indicator {
+	font-size: 22px;
+	font-weight: bold;
+	color: #000;
+	margin: 2rem auto;
+}
+.modal-body .name-text {
+	font-size: 20px;
+}
+.modal-body p {
+	font-size: 18px;
+}
