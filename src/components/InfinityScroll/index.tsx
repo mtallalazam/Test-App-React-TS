@@ -6,17 +6,21 @@ interface InfinityScrollPropsTypes {
 }
 
 const InfinityScroll: React.FC<InfinityScrollPropsTypes> = ({ children, loadMore }) => {
+	const handleScrollEvent = () => {
+		const SumHeight: number = document.documentElement.scrollTop + window.innerHeight;
+		const TotalHeight: number = document.documentElement.offsetHeight;
+
+		let bottomOfWindow = SumHeight > TotalHeight || SumHeight === TotalHeight;
+
+		if (bottomOfWindow) {
+			loadMore();
+		}
+	};
+	
 	useEffect(() => {
-		window.addEventListener("scroll", () => {
-			const SumHeight: number = document.documentElement.scrollTop + window.innerHeight;
-			const TotalHeight: number = document.documentElement.offsetHeight;
-
-			let bottomOfWindow = SumHeight > TotalHeight || SumHeight === TotalHeight;
-
-			if (bottomOfWindow) {
-				loadMore();
-			}
-		});
+		window.addEventListener("scroll", handleScrollEvent);
+		
+		return () => window.removeEventListener("scroll", handleScrollEvent);
 	}, []);
 
 	return <>{children}</>;
